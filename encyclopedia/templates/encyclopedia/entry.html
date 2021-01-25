@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {{ entry|safe }}
+
+    <form class="newentry" action="{%url 'edit' %}" method="GET">
+        <input type="hidden" value="{{title}}" name="title">
+        <div id="submit">
+            <input type="submit"  value="Edit">
+        </div>
+    </form>
+        
+{% endblock %}

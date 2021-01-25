@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block body %}
+<p>{{error}}</p>
+    <h1 id="create">Create new Entry</h1>
+
+     <form class="newentry" action="{%url 'create' %}" method="POST">
+         {% csrf_token %}
+         <div class="lol">
+            <label id="title">Enter Title:</label>
+        <input type="text" id="title1" name="title" value="{{title}}">
+       </div>
+       <div class="lal">
+        <label id="text">Enter Markdown:</label>
+        <textarea type="text" id="text1" rows="2" cols="25" name="text">{{text}}</textarea>
+         <div id="submit">
+         <input type="submit"  value="Submit">
+        </div>
+        </div>
+     </form>
+
+{% endblock %}
